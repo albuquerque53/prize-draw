@@ -1,8 +1,8 @@
-<div class="text-center">
+<div class="flex flex-col items-center justify-center h-screen">
 
-    <h1 class="rounded">
+    <div class="rounded m-10 h-20">
         {{ $winner?->nickname }}
-    </h1>
+    </div>
 
     <button class="rounded border-2 border-blue-400 p-2 hover:bg-blue-400" wire:click="raffle">
         Raffle!
