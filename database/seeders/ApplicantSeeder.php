@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Applicant;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class ApplicantSeeder extends Seeder
 {
@@ -13,8 +12,6 @@ class ApplicantSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('applicants')->insert([
-            'nickname' => Str::random(10),
-        ]);
+        Applicant::factory()->count(12)->create();
     }
 }
