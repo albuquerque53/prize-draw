@@ -10,7 +10,7 @@ use Livewire\Component;
 class PrizeDraw extends Component
 {
     public string $title;
-    public string $winner;
+    public Applicant $winner;
 
     #[Title('Prize Draw')]
     public function render(): View
