@@ -1,6 +1,6 @@
 <div class="flex flex-col items-center justify-center h-screen">
 
-    <div class="rounded m-10 h-20">
+    <div wire:stream="winner" class="rounded m-10 h-20">
         {{ $winner?->nickname }}
     </div>
 

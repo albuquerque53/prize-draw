@@ -20,6 +20,13 @@ class PrizeDraw extends Component
 
     public function raffle(): void
     {
-        $this->winner = Applicant::query()->inRandomOrder()->first();
+        $applicants = Applicant::query()->inRandomOrder()->get();
+
+        $applicants->each(function (Applicant $applicant) {
+            $this->stream('winner', $applicant->nickname, true);
+            usleep(10000);
+        });
+
+        $this->winner = $applicants->last();
     }
 }
