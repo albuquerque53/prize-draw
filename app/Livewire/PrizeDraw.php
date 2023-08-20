@@ -9,8 +9,8 @@ use Livewire\Component;
 
 class PrizeDraw extends Component
 {
-    public string $title;
-    public Applicant $winner;
+    public ?Applicant $winner = null;
+    public string $buttonMessage = 'Raffle!';
 
     #[Title('Prize Draw')]
     public function render(): View
@@ -28,5 +28,6 @@ class PrizeDraw extends Component
         });
 
         $this->winner = $applicants->last();
+        $this->buttonMessage = 'Try again!';
     }
 }
